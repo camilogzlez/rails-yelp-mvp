@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.container{
+  margin:0 auto;
+}
+
+.form-control{
+  width: 500px;
+}

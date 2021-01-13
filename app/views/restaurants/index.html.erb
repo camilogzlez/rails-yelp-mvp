@@ -2,4 +2,4 @@
 <% @restaurants.each do |restaurant| %>
 <h2><%= link_to restaurant.name, restaurant_path(restaurant.id) %> <small> Category: <%= restaurant.category %></small></h2>
 <% end %>
-<%= link_to "create a new Restaurant", new_restaurant_path %>
+<%= link_to "create a new Restaurant", new_restaurant_path,class: "btn btn-primary" %>

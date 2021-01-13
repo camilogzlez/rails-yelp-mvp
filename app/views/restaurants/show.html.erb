@@ -4,3 +4,22 @@
 <li>Phone number: <%= @restaurant.phone_number %></li>
 <li>Adress: <%= @restaurant.address %></li>
 </ul>
+
+<h3>Reviews</h3>
+<% @all_rating = 0 %>
+
+<% @restaurant.reviews.each do |review| %>
+<p>Rating: <%= review.rating %></p>
+<p>Comment: <%= review.content %></p>
+<% @all_rating += review.rating %>
+<% end %>
+<% if @all_rating > 0 %>
+<p> Average Rating <%= @avg_rating = @all_rating / @restaurant.reviews.length %></p>
+<% end %>
+
+
+
+
+<h2><%= link_to "leave a review", new_restaurant_review_path(@restaurant),class: "btn btn-primary" %></h2>
+
+<%= link_to 'Back', restaurants_path %>
